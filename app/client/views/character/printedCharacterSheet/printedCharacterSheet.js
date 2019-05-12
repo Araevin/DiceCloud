@@ -8,13 +8,15 @@ Template.printedCharacterSheet.onRendered(function(){
 		truncate: true,
 	});
 	let url = `https://dicecloud.com/character/${this.data._id}`;
-	let canvas = this.find("#qrCode");
-	QRCode.toCanvas(canvas, url, {
-		margin: 0,
-		width: 200,
-	}, function(error){
-		$(canvas).css("width", "60px").css("height", "60px");
-		if (error) console.error(error)
+	let canvasList = this.findAll(".qrCode");
+	canvasList.forEach(function (canvas) {
+		QRCode.toCanvas(canvas, url, {
+			margin: 0,
+			width: 200,
+		}, function(error){
+			$(canvas).css("width", "60px").css("height", "60px");
+			if (error) console.error(error)
+		});
 	});
 });
 
@@ -67,6 +69,11 @@ Template.printedCharacterSheet.helpers({
 	},
 	characterUrl: function(){
 		return `/character/${this._id}`
+	},
+	spellLists: function(){
+		return SpellLists.find(
+			{charId: this._id},
+			{sort: {color: 1, name: 1}});
 	},
 });
 
