@@ -1,0 +1,47 @@
+.printed .printedSpellList.entry {
+    margin-bottom: 4mm;
+}
+
+.printed .printedSpellList.spellBook.double-border::before {
+    left: 0;
+    margin-right: 0;
+}
+
+.printed .printedSpellList .col1 {
+    margin-left: 2mm;
+    margin-right: 2mm;
+    margin-bottom: 2mm;
+}
+
+.printed .printedSpellList .col2, .printed .printedSpellList .col3 {
+    margin-right: 2mm;
+    margin-bottom: 2mm;
+}
+
+.printed .printedSpellList.spellBookTitle {
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    text-align: center;
+}
+
+.printedSpellList .title {
+	white-space: nowrap;
+    margin-left: 2mm;
+    margin-right: 8mm;
+}
+
+.printedSpellList .numbers {
+	z-index: 1;
+	min-height: 45px;
+}
+
+.printed .printedSpellList.double-border{
+	padding: 0;
+}
+
+.printed .printedSpellList.double-border:before {
+    top: 4px;
+    bottom: 4px;
+    left: 33px;
+    margin-right: 5mm;
+}

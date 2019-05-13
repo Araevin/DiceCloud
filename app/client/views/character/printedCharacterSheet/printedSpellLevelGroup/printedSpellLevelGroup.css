@@ -1,0 +1,16 @@
+.printed .spellLevelGroupLabel {
+	position: relative;
+	top: -15px;
+	z-index: 1;
+	padding: 2px 18px;
+	background-image: url(/png/downwardPointingBorder.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+}
+
+.printed .printedSpellLevelGroup.layout.double-border {
+    margin-bottom: 2mm;
+}

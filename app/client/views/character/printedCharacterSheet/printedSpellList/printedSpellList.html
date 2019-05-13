@@ -1,0 +1,58 @@
+<template name="printedSpellList">
+    <div class="printedSpellList spellBook double-border">
+        <div class="printedSpellList spellBookTitle vertical paper-font-headline">
+            {{spellList.name}}
+        </div>
+        <div class="printedSpellList layout horizontal center-justified entry">
+            <div class="printedSpellList layout horizontal double-border">
+                <div class="numbers paper-font-display1 octogon-border">
+                    {{evaluateAttackBonus charId spellList}}
+                </div>
+                <div class="printedSpellList paper-font-subhead title flex layout horizontal center">
+                    Attack Bonus
+                </div>
+            </div>
+            <div class="printedSpellList layout horizontal double-border">
+                <div class="numbers paper-font-display1 octogon-border">
+                    {{evaluateSaveDC charId spellList}}
+                </div>
+                <div class="paper-font-subhead title flex layout horizontal center">
+                    Spell Save DC
+                </div>
+            </div>
+            {{#if spellList.maxPrepared}}
+            <div class="printedSpellList layout horizontal double-border">
+                <div class="numbers paper-font-display1 octogon-border">
+                    {{evaluateMaxPrepared charId spellList}}
+                </div>
+                <div class="paper-font-subhead title flex layout horizontal center">
+                    Max Prepared
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        {{#if spellList.description}}
+        <div style="margin-bottom:4mm; margin-left:12mm; margin-right:8mm;">
+            {{evaluateDescription charId spellList}}
+        </div>
+        {{/if}}
+        <div class="columns layout horizontal flex">
+            <div class="col1 flex layout vertical">
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=0 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=1 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=2 charId=charId}}
+            </div>
+            <div class="col2 flex layout vertical">
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=3 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=4 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=5 charId=charId}}
+            </div>
+            <div class="col3 flex layout vertical">
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=6 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=7 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=8 charId=charId}}
+                {{> printedSpellLevelGroup spellList=spellList spellLevel=9 charId=charId}}
+            </div>
+        </div>
+    </div>
+</template>

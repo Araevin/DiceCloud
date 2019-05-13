@@ -42,7 +42,7 @@
 								{{characterUrl}}
 							</div>
 						</div>
-						<canvas id="qrCode"></canvas>
+						<canvas class="qrCode"></canvas>
 					</div>
 					<div class="columns layout horizontal flex">
 						<div class="col1 flex layout vertical">
@@ -268,6 +268,43 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="page">
+				<div class="layout vertical" style="height: 100%;">
+					<div class="layout horizontal center" style="margin-bottom: 4mm">
+						<img src="/crown-dice-logo-cropped-transparent.png" style="width: 60px; margin-right: 2mm">
+						<div class="characterName paper-font-title" style="margin-right: 4mm">
+							{{name}}
+						</div>
+						<div class="paper-font-body2">
+							<div>
+								{{#each classes}}
+								<span style="margin-right: 2mm;">
+									{{name}}&nbsp;{{level}}
+								</span>
+								{{/each}}
+							</div>
+							<div>
+								{{character.alignment}} {{character.gender}} {{character.race}}
+							</div>
+						</div>
+						<div class="flex layout vertical end" style="margin-right: 2mm;">
+							<div class="paper-font-body2 " style="font-size: 5mm !important;">
+								dicecloud.com
+							</div>
+							<div>
+								{{characterUrl}}
+							</div>
+						</div>
+						<canvas class="qrCode"></canvas>
+					</div>
+					<div class="paper-font-subhead layout vertical center" style="margin-bottom: 2mm;">
+						Spell Lists
+					</div>
+					{{#each spellList in spellLists}}
+						{{> printedSpellList spellList=spellList charId=_id}}
+					{{/each}}
 				</div>
 			</div>
 		</div>
