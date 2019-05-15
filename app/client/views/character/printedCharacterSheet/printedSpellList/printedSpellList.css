@@ -1,10 +1,16 @@
 .printed .printedSpellList.entry {
-    margin-bottom: 4mm;
+    margin-bottom: 2mm;
 }
 
 .printed .printedSpellList.spellBook.double-border::before {
     left: 0;
     margin-right: 0;
+}
+
+.printed .printedSpellList .printedSpellListDescription {
+    margin-bottom:4mm;
+    margin-left:12mm;
+    margin-right:8mm;
 }
 
 .printed .printedSpellList .col1 {

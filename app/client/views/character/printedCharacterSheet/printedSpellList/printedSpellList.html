@@ -32,27 +32,20 @@
             {{/if}}
         </div>
         {{#if spellList.description}}
-        <div style="margin-bottom:4mm; margin-left:12mm; margin-right:8mm;">
+        <div class="printedSpellList printedSpellListDescription">
             {{evaluateDescription charId spellList}}
         </div>
         {{/if}}
-        <div class="columns layout horizontal flex">
-            <div class="col1 flex layout vertical">
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=0 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=1 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=2 charId=charId}}
-            </div>
-            <div class="col2 flex layout vertical">
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=3 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=4 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=5 charId=charId}}
-            </div>
-            <div class="col3 flex layout vertical">
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=6 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=7 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=8 charId=charId}}
-                {{> printedSpellLevelGroup spellList=spellList spellLevel=9 charId=charId}}
-            </div>
+        {{#each row in rowList}}
+        <div class="row{{row}} layout horizontal flex">
+            {{#each col in columnList}}
+                <div class="col{{col}} flex layout vertical">
+                    {{#if itemExists (spellGroupColumns charId spellList col row)}}
+                        {{> printedSpellLevelGroup spellList=spellList spellLevel=(spellGroupColumns charId spellList col row) charId=charId}}
+                    {{/if}}
+                </div>
+            {{/each}}
         </div>
+        {{/each}}
     </div>
 </template>

@@ -3,7 +3,7 @@
         <div class="paper-font-subhead spellLevelGroupLabel">
             {{spellLevel}}
         </div>
-        <div class="paper-font-caption flex layout vertical left" style="bottom:2mm; right:8mm;">
+        <div class="flex layout vertical left spellLevelGroupContent">
             {{#each spell in (spellsInGroup spellList spellLevel charId)}}
                 {{> printedSpell spell=spell}}
             {{/each}}
