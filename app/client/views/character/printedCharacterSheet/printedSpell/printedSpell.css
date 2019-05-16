@@ -1,0 +1,20 @@
+.printed .printedSpell div.circle {
+  -moz-border-radius: 8px/8px;
+  -webkit-border-radius: 8px 8px;
+  border-radius: 8px/8px;
+  border: solid 1px black;
+  width: 12px;
+  height: 12px;
+}
+
+.printed .printedSpell .spellName {
+    width: 100%;
+}
+
+.printed .printedSpell .circle-container {
+    text-align: right;
+}
+
+.spellLine:nth-of-type(even) {
+    background: #ececec;
+}

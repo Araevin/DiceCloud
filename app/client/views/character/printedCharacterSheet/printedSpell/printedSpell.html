@@ -1,7 +1,12 @@
 <template name="printedSpell">
-<div class="printedSpell">
-    <div class="printedSpell layout horizontal center">
-        {{spell.name}}
+<div class="printedSpell spellLine">
+    <div class="layout horizontal flex">
+        <div class="printedSpell spellName layout horizontal center">
+            {{spell.name}}
+        </div>
+        <div class="circle-container">
+            <div class="circle"></div>
+        </div>
     </div>
 </div>
 </template>
